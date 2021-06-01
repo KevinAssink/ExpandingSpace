@@ -6,8 +6,10 @@ public class controlplayer : MonoBehaviour
 {
 
     float speed = 4f;
-
+    public Animator Animator;
     private Rigidbody2D rb;
+    public float runSpeed = 40f;
+    float horizontalMove = 0f;
 
     // Use this for initialization
     void Start()
@@ -28,7 +30,19 @@ public class controlplayer : MonoBehaviour
         // Update the ships position each frame
         transform.position += move
             * speed * Time.deltaTime;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        Animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        if (horizontalMove > 0f)
+        {
+            rb.velocity = new Vector2 (horizontalMove * speed, rb.velocity.y);
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        else if (horizontalMove < 0f)
+        {
+            rb.velocity = new Vector2 (horizontalMove * speed, rb.velocity.y);
+            transform.localScale = new Vector2(-1f, 1f);
+        }
     }
 }

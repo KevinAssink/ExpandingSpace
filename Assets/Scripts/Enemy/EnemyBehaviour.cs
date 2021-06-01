@@ -52,6 +52,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float distance; //set the distance of the enemy seeing the player
     public float agroRange;
     public Transform target;//set target from inspector instead of looking in Update
+    public int health = 100; // amount of base health
+    public GameObject deathEffect; // plays death effect 
 
     void Update()
     {
@@ -77,5 +79,22 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
 
+    }
+   
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
