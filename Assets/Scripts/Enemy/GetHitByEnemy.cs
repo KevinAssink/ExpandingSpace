@@ -24,7 +24,7 @@ public class GetHitByEnemy : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         //once the Enemy collides with player a life will be destroyed, once all lives are gone, player gets destroyed and plays a sound
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "enemy")
         {
             //Destroy 1 life at a time
             Destroy(livesSprites[lives-1]);
