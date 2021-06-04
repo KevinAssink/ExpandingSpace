@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class enemy_movement : MonoBehaviour
 {
 
@@ -20,6 +16,7 @@ public class enemy_movement : MonoBehaviour
         {
             return;
         }
+        //hier ziet een probleem
         if (Vector2.Distance(transform.position, target.position) < agroRange) //Agro range
         {  //rotate to look at the player
             transform.LookAt(target.position);
@@ -28,9 +25,14 @@ public class enemy_movement : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) < agroRange) //Agro range
         {   //move towards the player
+
+          
             if (Vector2.Distance(transform.position, target.position) > distance)
             {//move if distance from target is greater than distance
+
+                Debug.Log("speed" + speed);
                 transform.Translate(new Vector2(speed * Time.deltaTime, 0));
+                //Debug.Log("!!");
 
             }
         }
