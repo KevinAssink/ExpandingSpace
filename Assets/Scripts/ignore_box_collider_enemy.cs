@@ -9,9 +9,9 @@ public class ignore_box_collider_enemy : MonoBehaviour
     private void Start()
     {
         
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
+        foreach (GameObject Enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(Enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
         
     }

@@ -22,12 +22,11 @@ public class controlplayer : MonoBehaviour
     {
 
         // What is the player doing with the controls?
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical"), 0);
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"),0, 0);
         //rb.velocity = new Vector2(move, 0);
         rb.AddForce(move);
 
-        // Update the ships position each frame
+        // Update the players position each frame
         transform.position += move
             * speed * Time.deltaTime;
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
