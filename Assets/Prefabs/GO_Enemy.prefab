@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7991653955419586393}
-  - component: {fileID: 7991653955419586392}
   - component: {fileID: 1820952115071478330}
   - component: {fileID: 1490520559977784469}
+  - component: {fileID: 7858628668756487391}
+  - component: {fileID: -7836372462413819067}
   m_Layer: 0
   m_Name: GO_Enemy
   m_TagString: Enemy
@@ -33,23 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7991653955419586392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7991653955419586406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b808a08737ce37459d6287ae8ea030b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  agroRange: 1000
-  target: {fileID: 8796428189102571611, guid: 8df89c382e258a44eb3f354788897149, type: 3}
-  health: 100
-  deathEffect: {fileID: 0}
 --- !u!212 &1820952115071478330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,3 +111,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.95}
   m_EdgeRadius: 0
+--- !u!114 &7858628668756487391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991653955419586406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46551cbb021fd2428e955b90b2512ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+--- !u!114 &-7836372462413819067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991653955419586406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a481390a08bec53468ee9e3ef640a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  deathEffect: {fileID: 0}

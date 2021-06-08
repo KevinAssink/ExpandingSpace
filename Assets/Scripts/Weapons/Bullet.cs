@@ -5,23 +5,19 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
 
-    public float speed = 20f;
-    public int damage = 10;
-    public Rigidbody2D rb;
+    public float velX = 5f;
+    float velY = 1f;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        Enemy enemy = hitinfo.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
-        //Destroy(gameObject);
+        rb.velocity = new Vector2(velX, velY);
+        Destroy(gameObject, 3f);
     }
 }

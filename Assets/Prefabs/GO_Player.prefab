@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8796428189102571610}
   - component: {fileID: 8796428189102571608}
   - component: {fileID: 8796428189102571615}
-  - component: {fileID: 8796428189102571604}
-  - component: {fileID: 8796428189102571614}
   m_Layer: 0
   m_Name: GO_Player
   m_TagString: Player
@@ -34,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8796428190290895809}
-  - {fileID: 8796428190429284177}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8382ac4028b03140b1c35b61242a0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 8796428190290895815}
-  runSpeed: 1
+  bulletRight: {fileID: 1630890484366814272, guid: d6b10e542905af14bad2b87c975108c9, type: 3}
+  bulletLeft: {fileID: 1630890484366814272, guid: 58d816ed9eb52fb4ba9cd5281726fcdf, type: 3}
+  fireRate: 0.1
 --- !u!50 &8796428189102571610
 Rigidbody2D:
   serializedVersion: 4
@@ -195,45 +193,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8796428189102571604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8796428189102571605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b580b4d2d94fd8b4a8afb5a25def825a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOverScreen: {fileID: 0}
-  GameOver: 1
-  ParticlesExplosion: {fileID: 6184923160650003228, guid: adaf298d29ca00747af20eaaa19e2315, type: 3}
-  ExplosionPoint: {fileID: 8796428189102571611}
-  other: {fileID: 0}
-  enemyView: {fileID: 0}
-  enemyBehaviourList:
-  - {fileID: 0}
-  livesSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  lives: 3
---- !u!114 &8796428189102571614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8796428189102571605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e766cae727274418a1531a3d6f5315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 8796428190429284177}
-  bulletPrefab: {fileID: 5404728903496350222, guid: c86639813c017754f8eb4dfe6f0751d5, type: 3}
 --- !u!1 &8796428190290895810
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,33 +295,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &8796428190429284178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8796428190429284177}
-  m_Layer: 0
-  m_Name: Firing Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8796428190429284177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8796428190429284178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 0.081, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8796428189102571611}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
