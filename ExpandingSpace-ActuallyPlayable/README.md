@@ -1,2 +1,0 @@
-# ExpandingSpace
-Project for school
