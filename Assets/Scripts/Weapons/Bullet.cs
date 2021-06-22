@@ -6,26 +6,18 @@ public class bullet : MonoBehaviour
 {
 
     public float velX = 5f;
-    float velY = 0f;
+    float velY = 1f;
     Rigidbody2D rb;
-    public int destroyTime = 2;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(velX, velY);
     }
 
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        
+        rb.velocity = new Vector2(velX, velY);
         Destroy(gameObject, 3f);
-    }
-
-
-    void Update()
-    {
-        Destroy(gameObject, destroyTime);
     }
 }

@@ -44,7 +44,8 @@ public class enemy_wave_spawner : MonoBehaviour
         {
             if(state == SpawnState.WAITING)
             {
-                if (!EnemyIsAlive())
+               
+                if (EnemyIsAlive())
                 {
                     WaveCompleted();
 

@@ -3,7 +3,15 @@ guid: c8382ac4028b03140b1c35b61242a0c2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundCheck: {instanceID: 0}
+  - bulletRight: {instanceID: 0}
+  - bulletLeft: {instanceID: 0}
+  - gameOverText: {instanceID: 0}
+  - restartButton: {instanceID: 0}
+  - heart1: {instanceID: 0}
+  - heart2: {instanceID: 0}
+  - heart3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
