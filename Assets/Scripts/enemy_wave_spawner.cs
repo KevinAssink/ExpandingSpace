@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class enemy_wave_spawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING };
+    public enum SpawnState { SPAWNING, WAITING, COUNTING, STOP };
     
 
     
@@ -13,9 +13,10 @@ public class enemy_wave_spawner : MonoBehaviour
         public string name;
         public Transform enemy;
         public int count;
+        
         public float rate;
     }
-
+    public int waveCount;
     public wave[] waves;
     private int NextWave = 0;
 
@@ -44,9 +45,10 @@ public class enemy_wave_spawner : MonoBehaviour
         {
             if(state == SpawnState.WAITING)
             {
+                WaveCompleted();
                 if (!EnemyIsAlive())
                 {
-                    WaveCompleted();
+                    
 
                 }
                 else
@@ -109,6 +111,8 @@ public class enemy_wave_spawner : MonoBehaviour
         {
             SpawnEnemy(_wave.enemy);
             yield return new WaitForSeconds(1f / _wave.rate);
+            waveCount++;
+            Debug.Log(waveCount);
         }
 
         state = SpawnState.WAITING;

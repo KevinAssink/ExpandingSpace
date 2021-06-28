@@ -9,6 +9,7 @@ public class bullet : MonoBehaviour
     float velY = 0f;
     Rigidbody2D rb;
     public int destroyTime = 2;
+    public AudioSource shootingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -28,4 +29,8 @@ public class bullet : MonoBehaviour
     {
         Destroy(gameObject, destroyTime);
     }
+    public void playSoundEffect()
+	{
+        shootingSound.Play();
+	}
 }
